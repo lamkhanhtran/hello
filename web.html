@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="color.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="upper">
+        <button id="reset">Reset</button>
+    </div>
+    <div>Time: 
+        <span id="clock"></span>
+    </div>
+    <div id="middle">
+        <table id="grid" oncontextmenu="return false" ondrag="return false" ondragstart="return false"></table>
+    </div>
+    <div>
+        Rows: 
+        <input type="number" placeholder="Rows" id="row">
+    </div>
+    <div>
+        Columns:
+        <input type="number" placeholder="Columns" id="column">
+    </div>
+    <div>
+        Mines:
+        <input type="number" placeholder="Bombs" id="bombs">
+    </div>
+    <script type="module" src="buildgame.js"></script>
+    <script type="module" src="buildtime.js"></script>
+</body>
+</html>

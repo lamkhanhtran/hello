@@ -1,0 +1,52 @@
+body{
+    background-color: darkgrey;
+    margin: 0;
+}
+#upper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    height : 100px;
+}
+#reset{
+    margin-left: auto;
+    margin-right: auto;
+}
+#grid{
+    border-spacing: 0px;
+}
+#grid tr td{
+    user-select: none;
+    text-align: center;
+    background-color: darkgrey;
+    border: 3px outset;
+}
+#grid tr td div{
+    width: 18px;
+    height: 18px;
+}
+#grid tr td.clicked{
+    border: 1px solid gray;
+}
+#grid tr td.clicked div{
+    width: 22px;
+    height: 22px;
+}
+#grid tr td.mine{
+    background-color: red;
+    border: 0px;
+}
+#grid tr td.beingClicked{
+    border: 1px solid gray;
+}
+
+.Num0{ color: darkgray;}
+.Num1{ color: blue; }
+.Num2{ color: green; }
+.Num3{ color: red; }
+.Num4{ color: darkblue; }
+.Num5{ color: darkred; }
+.Num6{ color: teal; }
+.Num7{ color: black; }
+.Num8{ color: darkgrey; }
