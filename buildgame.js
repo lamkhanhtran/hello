@@ -10,8 +10,8 @@ let setRow = 10, setCol = 10, setBombs = 20;
 generateGrid();
 
 function generateGrid(){
-    Win = false; firstTime = true; timeStop = false;
-    grid.innerHTML = "";
+
+    Win = false; firstTime = true; timeStop = false; grid.innerHTML = "";
     for(let i=0;i<setRow;i++){
         let row = grid.insertRow(i);
         for(let j=0;j<setCol;j++){
@@ -48,6 +48,7 @@ function generateGrid(){
 }
 
 function notOpenYet(btntype, cell){
+
     if(cell.innerText=="")
         cell.className = "beingClicked";
     if(btntype>=3){
@@ -64,6 +65,7 @@ function notOpenYet(btntype, cell){
 }
 
 function OpenNow(btntype, cell){
+
     if(cell.innerText=="")
         cell.className = "";
     if(btntype>=3){
@@ -80,6 +82,7 @@ function OpenNow(btntype, cell){
 }
 
 function firstClicked(cell){
+
     let bombsLeft = setBombs;
     while(bombsLeft){
         let row = Math.floor(Math.random()*setRow);
@@ -93,6 +96,7 @@ function firstClicked(cell){
 }
 
 function revealMine(Win){
+
     for(let i=0;i<setRow;i++){
         for(let j=0;j<setCol;j++){
             let cell = grid.rows[i].cells[j];
@@ -114,6 +118,7 @@ function revealMine(Win){
 }
 
 function checkLevelCompletion(){
+
     if(Win)
         return 0;
     let cellOpened = 0;
@@ -132,9 +137,10 @@ function checkLevelCompletion(){
 }
 
 function cellClicked(cell, btntype){
+
     let atRow = cell.parentNode.rowIndex;
     let atCol = cell.cellIndex;
-    if(btntype==1&&cell.innerText==""){
+    if(btntype==1&&(cell.innerText==""||cell.innerText=="?")){
         if(firstTime){
             firstClicked(cell);
             firstTime = false;
@@ -200,10 +206,12 @@ let inputBombs = document.getElementById("bombs");
 
 let reset = document.getElementById("reset");
 reset.addEventListener("click", function(){
+
     if(inputRow.value=="")
         setRow = 10;
     else
         setRow = Math.min(Math.max(1, inputRow.value), 99);
+    inputRow.value = "";
     if(inputCol.value=="")
         setCol = 10;
     else
@@ -212,5 +220,8 @@ reset.addEventListener("click", function(){
         setBombs = Math.round(setRow*setCol/5);
     else
         setBombs = Math.max(Math.min(setRow*setCol-1, inputBombs.value), 1);
+    inputRow.value = "";
+    inputCol.value = "";
+    inputBombs.value = "";
     generateGrid();
 })

@@ -13,12 +13,13 @@ Clock.innerText = countTime.join("");
 function updateTime(){
     let counting = setInterval(function(){
         if(!firstTime&&!timeStop){
-            countTime[2] = (countTime.join("")!="999") ? addUp(countTime[2]) : countTime[0];
+            countTime[2] = (countTime.join("")!="999") ? addUp(countTime[2]) : countTime[2];
             countTime[1] = (countTime[2]=="0"&&countTime.join("")!="999") ? addUp(countTime[1]) : countTime[1];
             countTime[0] = (countTime[1]=="0"&&countTime[2]=="0"&&countTime.join("")!="999") ? addUp(countTime[0]) : countTime[0];
         }
         Clock.innerText = countTime.join("");
-    }, (!firstTime&&!timeStop) ? 1000 : 0)
+         countTime.join("")!="999"
+    }, 1000);
 }
 
 updateTime();

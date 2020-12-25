@@ -1,3 +1,7 @@
+@font-face{
+    font-family: clockFont;
+    src: url(Digital\ Clock\ font/Let_s_go_Digital_Regular.ttf);
+}
 body{
     background-color: darkgrey;
     margin: 0;
@@ -38,8 +42,10 @@ body{
     border: 0px;
 }
 #grid tr td.beingClicked{
-    border: 1px solid gray;
+    border: 1px solid #808080;
 }
+
+#clock{ font-family: clockFont;}
 
 .Num0{ color: darkgray;}
 .Num1{ color: blue; }
